@@ -54,6 +54,9 @@ cmds['CSAFE_SETPROGRAM_CMD'] = [0x24, [1, 1]] #Workout ID, N/A
 cmds['CSAFE_SETPOWER_CMD'] = [0x34, [2, 1]] #Stroke Watts, Units
 cmds['CSAFE_GETCAPS_CMD'] = [0x70, [1,]] #Capability Code
 
+#Extended Long command
+cmds['CSAFE_SETPMCFG_CMD'] = [0x76, []]
+
 #PM3 Specific Short Commands
 cmds['CSAFE_PM_GET_WORKOUTTYPE'] = [0x89, [], 0x1A]
 cmds['CSAFE_PM_GET_DRAGFACTOR'] = [0xC1, [], 0x1A]
@@ -116,6 +119,9 @@ resp[0x23] = ['CSAFE_SETCALORIES_CMD', [0,]]
 resp[0x24] = ['CSAFE_SETPROGRAM_CMD', [0,]]
 resp[0x34] = ['CSAFE_SETPOWER_CMD', [0,]]
 resp[0x70] = ['CSAFE_GETCAPS_CMD', [11,]] #Depended on Capability Code (variable)
+
+#Response Data to Extended Long Commands
+resp[0x76] = ['CSAFE_SETPMCFG_CMD', [0, ]]
 
 #Response Data to PM3 Specific Short Commands
 resp[0x1A89] = ['CSAFE_PM_GET_WORKOUTTYPE', [1,]] #Workout Type

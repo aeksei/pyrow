@@ -54,3 +54,6 @@ docs/_build/
 target/
 
 venv/
+
+#pycharm directory
+.idea
